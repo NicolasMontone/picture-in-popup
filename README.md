@@ -4,7 +4,7 @@
 
 | Feature     |   Done  |
 | ----------- | ------- |
-| Video Popup | ❌       |
+| Video Popup | ✅       |
 | Video Lists | ❌       |
 
 ## Setup
