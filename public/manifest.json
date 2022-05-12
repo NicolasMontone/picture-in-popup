@@ -1,30 +1,39 @@
 {
-  "manifest_version": 3,
   "name": "Picture in Popup",
-  "description": "put your videos in a window",
-  "version": "1.0",
+  "description": "Cool videos with pictures in popup",
+  "version": "1.10",
   "icons": {
     "16": "/icons/icon16.png",
     "48": "/icons/icon48.png",
     "128": "/icons/icon128.png"
   },
-  "permissions": ["tabs", "background", "scripting"],
   "background": {
-    "service_worker": "background.js"
+    "persistent": false,
+    "scripts": ["background.js"]
   },
-  "action": {
-    "default_title": "Picture in Popup",
-    "default_popup": "popup.html",
+  "browser_action": {
     "default_icon": {
       "16": "/icons/icon16.png",
       "48": "/icons/icon48.png",
       "128": "/icons/icon128.png"
     }
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Alt+P",
+        "mac": "Alt+P",
+        "chromeos": "Alt+P",
+        "linux": "Alt+P"
+      }
     }
-  ]
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "permissions": ["<all_urls>", "notifications"],
+  "minimum_chrome_version": "69.0.3483.0",
+  "manifest_version": 2
 }
