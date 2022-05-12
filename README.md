@@ -23,3 +23,7 @@
 1. Navigate to **chrome://extensions/**
 1. Click on *developer mode*
 1. Click on *Load unpacked* and upload the `dist` folder
+
+### Thanks
+
+Make it just for fun it's a picture in picture in ts basically ;) 
